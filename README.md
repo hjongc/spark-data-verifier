@@ -344,14 +344,6 @@ mvn clean test jacoco:report
 - **JUnit 5 + Mockito**: Testing framework
 - **Maven**: Build and dependency management
 
-### License
-
-This project is part of a portfolio showcasing enterprise Java development skills.
-
-### Author
-
-Developed and used in production for data platform migration projects.
-
 ---
 
 ## Korean
@@ -545,7 +537,3 @@ echo "모든 검증 완료"
 - **SLF4J + Logback**: 로깅 프레임워크
 - **JUnit 5 + Mockito**: 테스트 프레임워크
 - **Maven**: 빌드 및 의존성 관리
-
-### 저자
-
-실제 데이터 플랫폼 이관 프로젝트에서 개발 및 사용되었습니다.
