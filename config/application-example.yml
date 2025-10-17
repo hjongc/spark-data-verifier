@@ -1,0 +1,37 @@
+# Example configuration file
+# Copy this to src/main/resources/application.yml and customize
+
+database:
+  hive:
+    # Hive/Spark JDBC connection
+    jdbcUrl: jdbc:hive2://your-hive-server:10009/default?kyuubi.engine.type=SPARK_SQL
+    username: spark
+    password: ""
+    driverClassName: org.apache.hive.jdbc.HiveDriver
+
+  mysql:
+    # MySQL for result storage
+    jdbcUrl: jdbc:mysql://your-mysql-server:3306/verification_db
+    username: verification_user
+    password: your_secure_password
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+verification:
+  # Maximum number of partitions to process in parallel
+  # Adjust based on your Spark executor count (e.g., 100 executors = 100 parallel)
+  maxParallelPartitions: 100
+
+  # Number of sample difference rows to store
+  sampleLimit: 5
+
+  # JDBC fetch size for large result sets
+  # Higher = fewer network round trips but more memory
+  jdbcFetchSize: 20000
+
+  # Retry configuration for transient failures
+  retryAttempts: 3
+  retryDelayMs: 1000
+
+logging:
+  level: INFO
+  pattern: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

@@ -1,0 +1,23 @@
+database:
+  hive:
+    jdbcUrl: jdbc:hive2://localhost:10009/default?kyuubi.engine.type=SPARK_SQL
+    username: spark
+    password: ""
+    driverClassName: org.apache.hive.jdbc.HiveDriver
+
+  mysql:
+    jdbcUrl: jdbc:mysql://localhost:3306/verification_db
+    username: user
+    password: password
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+verification:
+  maxParallelPartitions: 100
+  sampleLimit: 5
+  jdbcFetchSize: 20000
+  retryAttempts: 3
+  retryDelayMs: 1000
+
+logging:
+  level: INFO
+  pattern: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
